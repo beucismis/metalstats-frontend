@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>metalstats</title>
+        <link rel="stylesheet" href="style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">metalstats</a></h1>
+            <nav>
+                <a href="#" id="loginBtn" onclick="login()">Login with Spotify</a>
+                <a href="#" id="logoutBtn" onclick="logout()">Logout</a>
+                <a href="https://github.com/beucismis/metalstats">Source Code</a>
+            </nav>
+        </header>
+        <main>
+            <section id="topSection">
+                <form id="topForm">
+                    <label>Type:</label>
+                    <select id="type" name="type">
+                        <option value="tracks">Tracks</option>
+                        <option value="artists">Artists</option>
+                        <option value="albums">Albums</option>
+                    </select>
+                    <label>Time Range:</label>
+                    <select id="time_range" name="time_range">
+                        <option value="short_term">Short Term</option>
+                        <option value="medium_term" selected>Medium Term</option>
+                        <option value="long_term">Long Term</option>
+                    </select>
+                    <label>Limit:</label>
+                    <input type="number" id="limit" name="limit" min="1" max="50" value="10" />
+                    <button type="submit">Generate Image</button>
+                </form>
+            </section>
+            <div id="topResults"></div>
+        </main>
+        <script src="scripts.js"></script>
+    </body>
+</html>

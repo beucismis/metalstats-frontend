@@ -1,0 +1,20 @@
+html {
+    font-size: 15px;
+    font-family: monospace;
+}
+
+nav {
+    padding-bottom: 1.5rem;
+}
+
+div#topResults {
+    padding-top: 2rem;
+}
+
+a#loginBtn {
+    color: green;
+}
+
+a#logoutBtn {
+    color: red;
+}
