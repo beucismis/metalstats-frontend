@@ -94,7 +94,7 @@ function downloadImage(imgUrl) {
 
 async function copyImage(imgUrl) {
   try {
-    const response = await fetch(imgUrl, { credentials: "include" });
+    const response = await fetch(imgUrl);
     const blob = await response.blob();
     await navigator.clipboard.write([
       new ClipboardItem({
