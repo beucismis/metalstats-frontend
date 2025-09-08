@@ -16,7 +16,7 @@ function login() {
 }
 
 function logout() {
-  fetch(`${API_BASE}/logout`)
+  fetch(`${API_BASE}/logout`, { credentials: "include" })
     .then((res) => res.json())
     .then(() => {
       setMessage("Logged out successfully.");
