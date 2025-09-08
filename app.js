@@ -47,7 +47,7 @@ function fetchTopOrGrid() {
 }
 
 function fetchImage(url) {
-  fetch(url)
+  fetch(url, { credentials: "include" })
     .then((res) => {
       if (!res.ok) throw new Error("Image could not be retrieved. Please login.");
       return res.blob();
@@ -94,7 +94,7 @@ function downloadImage(imgUrl) {
 
 async function copyImage(imgUrl) {
   try {
-    const response = await fetch(imgUrl);
+    const response = await fetch(imgUrl, { credentials: "include" });
     const blob = await response.blob();
     await navigator.clipboard.write([
       new ClipboardItem({
@@ -108,7 +108,7 @@ async function copyImage(imgUrl) {
 }
 
 function checkLoginStatus() {
-  fetch(`${API_BASE}/healthcheck`)
+  fetch(`${API_BASE}/healthcheck`, { credentials: "include" })
     .then((res) => res.json())
     .then(() => setLoginButtons(true))
     .catch(() => setLoginButtons(false));
