@@ -16,9 +16,7 @@ function login() {
 }
 
 function logout() {
-  fetch(`${API_BASE}/logout`, {
-    credentials: "include",
-  })
+  fetch(`${API_BASE}/logout`)
     .then((res) => res.json())
     .then(() => {
       setMessage("Logged out successfully.");
@@ -49,9 +47,7 @@ function fetchTopOrGrid() {
 }
 
 function fetchImage(url) {
-  fetch(url, {
-    credentials: "include",
-  })
+  fetch(url)
     .then((res) => {
       if (!res.ok) throw new Error("Image could not be retrieved. Please login.");
       return res.blob();
@@ -112,9 +108,7 @@ async function copyImage(imgUrl) {
 }
 
 function checkLoginStatus() {
-  fetch(`${API_BASE}/healthcheck`, {
-    credentials: "include",
-  })
+  fetch(`${API_BASE}/healthcheck`)
     .then((res) => res.json())
     .then(() => setLoginButtons(true))
     .catch(() => setLoginButtons(false));
