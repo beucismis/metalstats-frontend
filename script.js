@@ -108,9 +108,9 @@ async function copyImage(imgUrl) {
 }
 
 function checkLoginStatus() {
-  fetch(`${API_BASE}/healthcheck`, { credentials: "include" })
+  fetch("/auth-status", { credentials: "include" })
     .then((res) => res.json())
-    .then(() => setLoginButtons(true))
+    .then((data) => setLoginButtons(data.logged_in))
     .catch(() => setLoginButtons(false));
 }
 
